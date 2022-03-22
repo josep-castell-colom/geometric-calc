@@ -31,7 +31,16 @@ public class Trapecio implements FlatInterface {
   }
 
   public void setBB(double b) {
-    B = b;
+    boolean ok = false;
+    while(!ok){
+      if(b > this.getB()){
+        B = b;
+        ok = true;
+      } else {
+        System.out.println("La base mayor tiene que ser mayor que " + this.getB());
+        b = Double.parseDouble(input.nextLine());
+      }
+    }
   }
 
   public double getH() {
