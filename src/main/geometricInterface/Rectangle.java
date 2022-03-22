@@ -42,11 +42,14 @@ public class Rectangle implements FlatInterface {
   public void solicitarDatos(){
     System.out.println("Introduce la base del rectángulo: ");
     this.setB(Double.parseDouble(input.nextLine()));
+    System.out.println("Introduce la altura del rectángulo: ");
+    this.setH(Double.parseDouble(input.nextLine()));
   }
 
   @Override
   public void calcArea(){
     imprimirCaracteristicas();
     System.out.println("Área del rectángulo: " + (b * h));
+    FlatInterface.continuar();
   }
 }
