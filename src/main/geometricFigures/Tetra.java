@@ -1,15 +1,15 @@
-package geometricInterface;
+package geometricFigures;
 
 import interfaces.VolumeInterface;
 import java.util.Scanner;
 
-public class Cube implements VolumeInterface {
+public class Tetra implements VolumeInterface {
   public static Scanner input = new Scanner(System.in);
   private double arista;
 
-  public Cube(){}
+  public Tetra(){}
 
-  public Cube(double arista){
+  public Tetra(double arista){
     this.setArista(arista);
   }
 
@@ -29,21 +29,21 @@ public class Cube implements VolumeInterface {
 
   @Override
   public void solicitarDatos(){
-    System.out.println("Introduce la longitud de la arista del cubo: ");
+    System.out.println("Introduce la longitud de la arista del tetraedro: ");
     this.setArista(Double.parseDouble(input.nextLine()));
   }
 
   @Override
   public void calcArea(){
     imprimirCaracteristicas();
-    System.out.println("Área del cubo: " + 6 * Math.pow(arista, 2));
+    System.out.println("Área del tetraedro: " + Math.sqrt(3) * Math.pow(arista, 2));
     VolumeInterface.continuar();
   }
 
   @Override
   public void calcVolumen(){
     imprimirCaracteristicas();
-    System.out.println("Volumen del cubo: " + Math.pow(arista, 3));
+    System.out.println("Volumen del tetraedro: " + (Math.sqrt(2) / 12) * Math.pow(arista, 3));
     VolumeInterface.continuar();
   }
 }

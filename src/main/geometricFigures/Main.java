@@ -1,8 +1,9 @@
-package geometricInterface;
+package geometricFigures;
 
 import java.util.Scanner;
 
 public class Main{
+  public static Scanner input = new Scanner(System.in);
   private static boolean on = true;
 
   public static boolean getOn(){
@@ -12,9 +13,9 @@ public class Main{
   public static void setOn(){
     on = !on;
   }
-  public static void main(String[] args){
+
+  public static void menu(){
     while(on){
-      Scanner input = new Scanner(System.in);
       Triangle triangle = new Triangle();
       Square square = new Square();
       Circle circle = new Circle();
@@ -137,5 +138,8 @@ public class Main{
           input.close();
       }
     }
+  }
+  public static void main(String[] args){
+    menu();
   }
 }

@@ -1,16 +1,16 @@
-package geometricInterface;
+package geometricFigures;
 
 import interfaces.FlatInterface;
 import java.util.Scanner;
 
-public class Rectangle implements FlatInterface {
+public class Triangle implements FlatInterface {
   public static Scanner input = new Scanner(System.in);
   private double b;
   private double h;
 
-  public Rectangle(){}
+  public Triangle(){}
 
-  public Rectangle(double b, double h){
+  public Triangle(double b, double h){
     this.setB(b);
     this.setH(h);
   }
@@ -34,22 +34,22 @@ public class Rectangle implements FlatInterface {
   @Override
   public void imprimirCaracteristicas(){
     FlatInterface.imprimirCalculadora();
-    System.out.println("Base: " + b);
-    System.out.println("Altura: " + h);
+    System.out.println("Triángulo: ");
+    System.out.println("Base: " + this.getB());
+    System.out.println("Altura: " + this.getH());
   }
 
   @Override
   public void solicitarDatos(){
-    System.out.println("Introduce la base del rectángulo: ");
+    System.out.println("Introduce la base del triángulo: ");
     this.setB(Double.parseDouble(input.nextLine()));
-    System.out.println("Introduce la altura del rectángulo: ");
+    System.out.println("Introduce la altura del triángulo: ");
     this.setH(Double.parseDouble(input.nextLine()));
   }
 
   @Override
   public void calcArea(){
     imprimirCaracteristicas();
-    System.out.println("Área del rectángulo: " + (b * h));
-    FlatInterface.continuar();
+    System.out.println("Área del triángulo: " + (b * h) / 2);
   }
 }

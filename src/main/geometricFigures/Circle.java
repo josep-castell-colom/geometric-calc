@@ -1,4 +1,4 @@
-package geometricInterface;
+package geometricFigures;
 
 import interfaces.FlatInterface;
 import java.util.Scanner;
