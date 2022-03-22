@@ -1,9 +1,11 @@
 package geometricInterface;
 
 import java.util.Scanner;
+
+import interfaces.FlatInterface;
 import myExceptions.MyException;
 
-public class Square implements GeometricInterface {
+public class Square implements FlatInterface {
   Scanner input = new Scanner(System.in);
   private double side;
 
@@ -23,23 +25,15 @@ public class Square implements GeometricInterface {
 
   @Override
   public void imprimirCaracteristicas(){
-    System.out.println("--------------------------------");
-    System.out.println("  Calculadora de Josep Castell");
-    System.out.println("--------------------------------");
+    FlatInterface.imprimirCalculadora();
     System.out.println("Cuadrado: ");
     System.out.println("Lado: " + this.getSide());
   }
 
   @Override
-  public void calcularArea() throws MyException{
+  public void calcArea() throws MyException{
     this.imprimirCaracteristicas();
     System.out.println("Área del cuadrado: " + Math.pow(this.side, 2));
-  }
-
-  @Override
-  public void calcularVolumen(){
-    this.imprimirCaracteristicas();
-    System.out.println("Volumen del cubo: " + Math.pow(this.side, 3));
   }
 
   @Override
