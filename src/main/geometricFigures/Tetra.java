@@ -24,7 +24,7 @@ public class Tetra implements VolumeInterface {
   @Override
   public void imprimirCaracteristicas(){
     VolumeInterface.imprimirCalculadora();
-    
+    System.out.println("Tetraedro: ");
     System.out.println("Longitud de arista: " + arista);
   }
 
