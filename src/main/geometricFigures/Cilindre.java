@@ -34,6 +34,7 @@ public class Cilindre implements VolumeInterface {
   @Override
   public void imprimirCaracteristicas(){
     VolumeInterface.imprimirCalculadora();
+    System.out.println("Cilindro: ");
     System.out.println("Radio: " + r);
     System.out.println("Altura: " + h);
   }

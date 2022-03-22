@@ -34,6 +34,7 @@ public class Rectangle implements FlatInterface {
   @Override
   public void imprimirCaracteristicas(){
     FlatInterface.imprimirCalculadora();
+    System.out.println("Rectángulo: ");
     System.out.println("Base: " + b);
     System.out.println("Altura: " + h);
   }

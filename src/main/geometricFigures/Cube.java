@@ -24,6 +24,7 @@ public class Cube implements VolumeInterface {
   @Override
   public void imprimirCaracteristicas(){
     VolumeInterface.imprimirCalculadora();
+    System.out.println("Cubo: ");
     System.out.println("Longitud de arista: " + arista);
   }
 

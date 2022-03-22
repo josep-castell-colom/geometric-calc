@@ -54,6 +54,7 @@ public class Trapecio implements FlatInterface {
   @Override
   public void imprimirCaracteristicas(){
     VolumeInterface.imprimirCalculadora();
+    System.out.println("Trapecio:");
     System.out.println("Base menor: " + b);
     System.out.println("Base mayor: " + B);
     System.out.println("Altura: " + h);

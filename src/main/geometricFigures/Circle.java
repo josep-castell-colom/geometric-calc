@@ -24,7 +24,7 @@ public class Circle implements FlatInterface {
   @Override
   public void imprimirCaracteristicas(){
     FlatInterface.imprimirCalculadora();
-    System.out.println("Circulo: ");
+    System.out.println("Círculo: ");
     System.out.println("Radio: " + this.getR());
   }
 
