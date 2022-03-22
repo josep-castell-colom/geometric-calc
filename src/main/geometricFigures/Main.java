@@ -2,6 +2,8 @@ package geometricFigures;
 
 import java.util.Scanner;
 
+import myExceptions.MyException;
+
 public class Main{
   public static Scanner input = new Scanner(System.in);
   private static boolean on = true;
@@ -48,7 +50,6 @@ public class Main{
       switch(opt){
         case "1": 
           try{
-            triangle.solicitarDatos();
             triangle.calcArea();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -56,7 +57,6 @@ public class Main{
           break;
         case "2":
           try{
-            square.solicitarDatos();
             square.calcArea();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -64,7 +64,6 @@ public class Main{
           break;
         case "3":
           try{
-            circle.solicitarDatos();
             circle.calcArea();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -72,7 +71,6 @@ public class Main{
           break;
         case "4":
           try{
-            rectangle.solicitarDatos();
             rectangle.calcArea();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -80,7 +78,6 @@ public class Main{
           break;
         case "5":
           try{
-            trapecio.solicitarDatos();
             trapecio.calcArea();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -88,7 +85,6 @@ public class Main{
           break;
         case "6":
           try{
-            cube.solicitarDatos();
             cube.calcArea();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -96,7 +92,6 @@ public class Main{
           break;
         case "7":
           try{
-            cube.solicitarDatos();
             cube.calcVolumen();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -104,7 +99,6 @@ public class Main{
           break;
         case "8":
           try{
-            cilindre.solicitarDatos();
             cilindre.calcArea();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -112,7 +106,6 @@ public class Main{
           break;
         case "9":
           try{
-            cilindre.solicitarDatos();
             cilindre.calcVolumen();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -120,7 +113,6 @@ public class Main{
           break;
         case "10":
           try{
-            tetra.solicitarDatos();
             tetra.calcArea();
           }catch(Exception exception){
             System.out.println(exception.getMessage());
@@ -128,7 +120,6 @@ public class Main{
           break;
         case "11":
           try{
-            tetra.solicitarDatos();
             tetra.calcVolumen();
           }catch(Exception exception){
             System.out.println(exception.getMessage());

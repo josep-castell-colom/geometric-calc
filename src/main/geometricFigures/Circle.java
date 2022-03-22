@@ -36,6 +36,7 @@ public class Circle implements FlatInterface {
 
   @Override
   public void calcArea(){
+    solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del círculo: " + Math.PI * (Math.pow(r, 2)));
   }

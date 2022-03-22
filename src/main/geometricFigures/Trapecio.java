@@ -71,6 +71,7 @@ public class Trapecio implements FlatInterface {
 
   @Override
   public void calcArea(){
+    solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del trapecio: " + ((B + b) / 2) * h);
     FlatInterface.continuar();

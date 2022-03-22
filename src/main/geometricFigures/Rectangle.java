@@ -48,6 +48,7 @@ public class Rectangle implements FlatInterface {
 
   @Override
   public void calcArea(){
+    solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del rectángulo: " + (b * h));
     FlatInterface.continuar();

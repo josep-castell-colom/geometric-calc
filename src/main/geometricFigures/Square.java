@@ -36,10 +36,11 @@ public class Square implements FlatInterface {
     this.setSide(Double.parseDouble(input.nextLine()));
   }
   
-    @Override
-    public void calcArea() throws MyException{
-      this.imprimirCaracteristicas();
-      System.out.println("Área del cuadrado: " + Math.pow(this.side, 2));
-      FlatInterface.continuar();
-    }
+  @Override
+  public void calcArea() throws MyException{
+    solicitarDatos();
+    imprimirCaracteristicas();
+    System.out.println("Área del cuadrado: " + Math.pow(this.getSide(), 2));
+    FlatInterface.continuar();
+  }
 }

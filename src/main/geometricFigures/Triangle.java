@@ -49,6 +49,7 @@ public class Triangle implements FlatInterface {
 
   @Override
   public void calcArea(){
+    solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del triángulo: " + (b * h) / 2);
   }

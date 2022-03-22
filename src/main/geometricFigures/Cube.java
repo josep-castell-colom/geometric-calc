@@ -35,6 +35,7 @@ public class Cube implements VolumeInterface {
 
   @Override
   public void calcArea(){
+    solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del cubo: " + 6 * Math.pow(arista, 2));
     VolumeInterface.continuar();
@@ -42,6 +43,7 @@ public class Cube implements VolumeInterface {
 
   @Override
   public void calcVolumen(){
+    solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Volumen del cubo: " + Math.pow(arista, 3));
     VolumeInterface.continuar();

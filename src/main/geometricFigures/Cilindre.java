@@ -48,6 +48,7 @@ public class Cilindre implements VolumeInterface {
 
   @Override
   public void calcArea(){
+    solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del cilindro: " + 2 * Math.PI * r * (r + h));
     VolumeInterface.continuar();
@@ -55,6 +56,7 @@ public class Cilindre implements VolumeInterface {
 
   @Override
   public void calcVolumen(){
+    solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Volumen del cilindro: " + Math.PI * Math.pow(r, 2) * h);
     VolumeInterface.continuar();
