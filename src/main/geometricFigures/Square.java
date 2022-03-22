@@ -31,9 +31,13 @@ public class Square implements FlatInterface {
   }
   
   @Override
-  public void solicitarDatos(){
+  public void solicitarDatos() throws MyException{
     System.out.println("Introduce la longitud del lado: ");
-    this.setSide(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setSide(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
   }
   
   @Override

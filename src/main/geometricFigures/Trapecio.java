@@ -2,6 +2,8 @@ package geometricFigures;
 
 import interfaces.FlatInterface;
 import interfaces.VolumeInterface;
+import myExceptions.MyException;
+
 import java.util.Scanner;
 
 public class Trapecio implements FlatInterface {
@@ -61,17 +63,29 @@ public class Trapecio implements FlatInterface {
   }
 
   @Override
-  public void solicitarDatos(){
+  public void solicitarDatos() throws MyException{
     System.out.println("Introduce la base menor del trapecio: ");
-    this.setB(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setB(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
     System.out.println("Introduce la base mayor del trapecio: ");
-    this.setBB(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setBB(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
     System.out.println("Introduce la altura del trapecio: ");
-    this.setH(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setH(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
   }
 
   @Override
-  public void calcArea(){
+  public void calcArea() throws MyException{
     solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del trapecio: " + ((B + b) / 2) * h);

@@ -1,6 +1,8 @@
 package geometricFigures;
 
 import interfaces.FlatInterface;
+import myExceptions.MyException;
+
 import java.util.Scanner;
 
 public class Triangle implements FlatInterface {
@@ -40,15 +42,23 @@ public class Triangle implements FlatInterface {
   }
 
   @Override
-  public void solicitarDatos(){
+  public void solicitarDatos() throws MyException{
     System.out.println("Introduce la base del triángulo: ");
-    this.setB(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setB(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
     System.out.println("Introduce la altura del triángulo: ");
-    this.setH(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setH(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
   }
 
   @Override
-  public void calcArea(){
+  public void calcArea() throws MyException{
     solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del triángulo: " + (b * h) / 2);

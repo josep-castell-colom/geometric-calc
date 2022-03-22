@@ -1,6 +1,8 @@
 package geometricFigures;
 
 import interfaces.VolumeInterface;
+import myExceptions.MyException;
+
 import java.util.Scanner;
 
 public class Tetra implements VolumeInterface {
@@ -29,13 +31,17 @@ public class Tetra implements VolumeInterface {
   }
 
   @Override
-  public void solicitarDatos(){
+  public void solicitarDatos() throws MyException {
     System.out.println("Introduce la longitud de la arista del tetraedro: ");
-    this.setArista(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setArista(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
   }
 
   @Override
-  public void calcArea(){
+  public void calcArea() throws MyException {
     solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del tetraedro: " + Math.sqrt(3) * Math.pow(arista, 2));
@@ -44,7 +50,11 @@ public class Tetra implements VolumeInterface {
 
   @Override
   public void calcVolumen(){
-    solicitarDatos();
+    try{
+      solicitarDatos();
+    }catch(MyException exception){
+      
+    }
     imprimirCaracteristicas();
     System.out.println("Volumen del tetraedro: " + (Math.sqrt(2) / 12) * Math.pow(arista, 3));
     VolumeInterface.continuar();

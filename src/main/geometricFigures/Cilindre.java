@@ -1,6 +1,8 @@
 package geometricFigures;
 
 import interfaces.VolumeInterface;
+import myExceptions.MyException;
+
 import java.util.Scanner;
 
 public class Cilindre implements VolumeInterface {
@@ -40,15 +42,23 @@ public class Cilindre implements VolumeInterface {
   }
 
   @Override
-  public void solicitarDatos(){
+  public void solicitarDatos() throws MyException{
     System.out.println("Introduce el radio del cilindro: ");
-    this.setR(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setR(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
     System.out.println("Introduce la altura del cilindro: ");
-    this.setH(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setH(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
   }
 
   @Override
-  public void calcArea(){
+  public void calcArea() throws MyException{
     solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del cilindro: " + 2 * Math.PI * r * (r + h));
@@ -57,7 +67,11 @@ public class Cilindre implements VolumeInterface {
 
   @Override
   public void calcVolumen(){
-    solicitarDatos();
+    try{
+      solicitarDatos();
+    }catch(MyException exception){
+      
+    }
     imprimirCaracteristicas();
     System.out.println("Volumen del cilindro: " + Math.PI * Math.pow(r, 2) * h);
     VolumeInterface.continuar();

@@ -1,9 +1,10 @@
 package interfaces;
 import java.util.Scanner;
+import myExceptions.MyException;
 
 public interface VolumeInterface {
   public static Scanner input = new Scanner(System.in);
-  public void calcArea();
+  public void calcArea() throws MyException;
   public void calcVolumen();
 
   public void imprimirCaracteristicas();
@@ -14,7 +15,7 @@ public interface VolumeInterface {
     System.out.println("--------------------------------------");
   }
 
-  public void solicitarDatos();
+  public void solicitarDatos() throws MyException;
 
   public static void continuar(){
     System.out.println("CONTINUAR (ENTER)");

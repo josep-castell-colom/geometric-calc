@@ -1,6 +1,8 @@
 package geometricFigures;
 
 import interfaces.VolumeInterface;
+import myExceptions.MyException;
+
 import java.util.Scanner;
 
 public class Cube implements VolumeInterface {
@@ -29,13 +31,17 @@ public class Cube implements VolumeInterface {
   }
 
   @Override
-  public void solicitarDatos(){
+  public void solicitarDatos() throws MyException{
     System.out.println("Introduce la longitud de la arista del cubo: ");
-    this.setArista(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setArista(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
   }
 
   @Override
-  public void calcArea(){
+  public void calcArea() throws MyException{
     solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del cubo: " + 6 * Math.pow(arista, 2));
@@ -44,7 +50,15 @@ public class Cube implements VolumeInterface {
 
   @Override
   public void calcVolumen(){
-    solicitarDatos();
+    boolean ok = false;
+    while(!ok){
+      try{
+        solicitarDatos();
+        ok = true;
+      }catch(MyException exception){
+        System.out.println(exception.getMessage());
+      }
+    }
     imprimirCaracteristicas();
     System.out.println("Volumen del cubo: " + Math.pow(arista, 3));
     VolumeInterface.continuar();

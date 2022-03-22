@@ -1,6 +1,8 @@
 package geometricFigures;
 
 import interfaces.FlatInterface;
+import myExceptions.MyException;
+
 import java.util.Scanner;
 
 public class Circle implements FlatInterface {
@@ -29,13 +31,17 @@ public class Circle implements FlatInterface {
   }
 
   @Override
-  public void solicitarDatos(){
+  public void solicitarDatos() throws MyException{
     System.out.println("Introduce el radio del círculo: ");
-    this.setR(Double.parseDouble(input.nextLine()));
+    if(input.hasNextDouble()){
+      this.setR(Double.parseDouble(input.nextLine()));
+    }else{
+      throw new MyException(1);
+    }
   }
 
   @Override
-  public void calcArea(){
+  public void calcArea() throws MyException{
     solicitarDatos();
     imprimirCaracteristicas();
     System.out.println("Área del círculo: " + Math.PI * (Math.pow(r, 2)));

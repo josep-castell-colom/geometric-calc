@@ -51,7 +51,7 @@ public class Main{
         case "1": 
           try{
             triangle.calcArea();
-          }catch(Exception exception){
+          }catch(MyException exception){
             System.out.println(exception.getMessage());
           }
           break;
